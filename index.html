@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Peter Schwarzkopf</title>
+    
+</head>
+<body>
+    <div id="topbar">
+        <object data="circle-svgrepo-com.svg" width="100" height="100" id="svg"> </object>
+        <h1 id="title">Peter Schwarzkopf</h1>
+        <div class="dropdown">
+            <button class="dropbutton">Home</button>
+            <div class="dropdowncontent">
+                <a href="index.html" id="current">Home</a>
+                <a href="">Resume</a>
+                <a href="Work.html">Work</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="imageDiv">
+        <h1>About Me</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class="animate1" id="description1">My name is Peter Schwarzkopf. I am a 4th year Web and Mobile Computing Student at RIT. I will be graduating in the spring of 2023 I specialize in User Design, Full-Stack Development, and Project Management. I am experienced in HTML, JavaScript, Java, PhP, and SQL.</p>
+        <img class="animate2" id="image" src="Me.jpg" height="30%" width = "30%">
+        
+            
+            <p class="animate3" id="description2"> In supplement to my academics and my technical skills, I have vast experience in the world of snowboarding. I have been snowboarding for 14 years and have taken my skills all over the country including Utah, Wyoming, Colorado, and Vermont. </p>
+            <footer>
+                <p class="footer">ⓒ Copyright 2022, Peter Schwarzkopf</p>
+                <a href="https://www.linkedin.com/in/peter-schwarzkopf-00641420a/" class="fa fa-linkedin footer"></a>
+                <a href="https://www.facebook.com/peter.schwarzkopf.7587" class="fa fa-facebook footer"></a>
+                <a href="https://github.com/peter-schwarzkopf" class="fa fa-github footer"></a>
+            </footer>
+    </div>
+        
+    
+</body>
+<script>
+    const logo = document.querySelector( `#svg` ).animate([
+            {transform: `rotate(-360deg)`}
+  ], {
+    
+    
+    duration: 20000,
+    iterations: Infinity
+    
+
+
+  }
+    );
+
+
+    const observer = new IntersectionObserver(entries =>{
+        entries.forEach(entry => {
+            // If the element is visible
+             if (entry.isIntersecting) {
+            // Add the animation class
+                entry.target.classList.remove('fade-animation-out');
+                entry.target.classList.add('fade-animation');
+             }
+             if(!entry.isIntersecting){
+                entry.target.classList.remove('fade-animation');
+                entry.target.classList.add('fade-animation-out');
+             }
+        });
+    });
+    observer.observe(document.querySelector(".animate1"))
+    observer.observe(document.querySelector(".animate2"))
+    observer.observe(document.querySelector(".animate3"))
+</script>
+</html>
